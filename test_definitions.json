@@ -1,0 +1,15 @@
+{
+    "containerDefinitions": [
+      {
+        "name": "simple-container",
+        "image": "alpine:latest",
+        "entryPoint": ["sh", "-c"],
+        "command": ["apk update && apk upgrade && touch testfile && chattr -i testfile"],
+        "cpu": 100,
+        "memory": 300,
+        "essential": true
+      }
+    ],
+    "family": "simple-container"
+  }
+  
