@@ -2,6 +2,8 @@
 
 This repository contains an AWS CloudFormation template and instructions for deploying a simple ECS task that runs custom commands using the Alpine Linux image. The ECS task is defined to execute specific commands on startup, making it suitable for various lightweight tasks or cron jobs.
 
+The CloudFormation template included creates a basic ECS cluster with its own VPC, Subnets, roles, Security groups and a single task that runs commands you program in.
+
 ## Prerequisites
 
 Before proceeding, ensure you have the following:
@@ -15,8 +17,8 @@ Before proceeding, ensure you have the following:
 1. **Clone this repository to your local machine**:
 
     ```bash
-    git clone https://github.com/YourUsername/YourRepoName.git
-    cd YourRepoName
+    git clone https://github.com/jmlake569/ecs_test_cases.git
+    cd ecs_test_cases
     ```
 
 2. **Edit the Task Definition JSON file**:
@@ -24,14 +26,6 @@ Before proceeding, ensure you have the following:
     - Open `task-definition.json`.
     - Replace the command in the `command` field with the command you wish to run.
     - Adjust the `cpu` and `memory` fields as needed for your command's requirements.
-
-3. **Push your changes**:
-
-    ```bash
-    git add task-definition.json
-    git commit -m "Update task definition"
-    git push
-    ```
 
 ## Deploy Via AWS CLI
 
@@ -53,6 +47,15 @@ To run the task manually:
 2. **Navigate to the ECS section**.
 3. **Select the appropriate cluster and task definition**.
 4. **Run the task**.
+
+## Deploying CloudFormation Template 
+
+This template deploys everything required to run an ECS cluster that runs a single task. This cluster and template is for testing and development purposes only.
+
+## Instructions
+
+1. **Deploy using UI or CLI**.
+2. **The paremter is not required and the default to a fake container image. You can include your own image here if you want, if not it defaults to an alpine container**.
 
 ## Stopping the Task
 
