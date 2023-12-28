@@ -1,8 +1,8 @@
 # ECS Task Deployment for Custom Command Execution
 
-This repository contains an AWS CloudFormation template and instructions for deploying a simple ECS task that runs custom commands using the Alpine Linux image. The ECS task is defined to execute specific commands on startup, making it suitable for various lightweight tasks or cron jobs.
+This repository contains an AWS CloudFormation template and instructions for deploying a simple ECS task that executes custom commands using the Alpine Linux image. The ECS task is designed to execute specific commands upon startup, making it suitable for a variety of lightweight tasks or cron jobs.
 
-The CloudFormation template included creates a basic ECS cluster with its own VPC, Subnets, roles, Security groups and a single task that runs commands you program in.
+The included CloudFormation template creates a basic ECS cluster complete with its own VPC, subnets, roles, security groups, and a single task that executes commands you specify.
 
 ## Prerequisites
 
@@ -48,28 +48,23 @@ To run the task manually:
 3. **Select the appropriate cluster and task definition**.
 4. **Run the task**.
 
-## Deploying CloudFormation Template 
-
-This template deploys everything required to run an ECS cluster that runs a single task. This cluster and template is for testing and development purposes only.
-
-## Instructions
-
-1. **Deploy using UI or CLI**.
-2. **The paremter is not required and the default to a fake container image. You can include your own image here if you want, if not it defaults to an alpine container**.
-
 ## Stopping the Task
 
 To stop the task, navigate to the ECS section in the AWS Management Console, select the running task, and choose to stop it.
 
 ---
 
-## Example Usage
+## Deploying the CloudFormation Template
 
-This setup is particularly useful for running lightweight cron jobs or one-off tasks in a serverless environment. 
+This template deploys all the necessary components to run an ECS cluster that executes a single task. This setup is intended primarily for testing and development purposes.
+
+## Instructions
+
+1. **Deploy using UI or CLI**.
+2. **The template includes a parameter for specifying the Docker image URI. By default, it is set to use an Alpine Linux image**.
 
 ---
 
 ## Contributing
 
 If you wish to contribute to this project, please submit a pull request with your proposed changes.
-
